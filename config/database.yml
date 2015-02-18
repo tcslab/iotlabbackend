@@ -10,23 +10,22 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
+  host: <%= Rails.application.secrets[:database][:host] %>
   adapter: mysql2
-  encoding: utf8
-  pool: 5
-  username: root
-  password:
+  encoding: UTF8
+  database: <%= Rails.application.secrets[:database][:name] %>
+  username: <%= Rails.application.secrets[:database][:username] %>
+  password: <%= Rails.application.secrets[:database][:password] %>
   socket: /var/run/mysqld/mysqld.sock
+  pool: 5
 
-development:
-  <<: *default
-  database: iotlabbackend_development
+development: *default
+test: *default
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: iotlabbackend_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +48,6 @@ test:
 #
 production:
   <<: *default
-  database: iotlabbackend_production
+  database: iotlabbackendlulea_production
   username: iotlabbackend
   password: <%= ENV['IOTLABBACKEND_DATABASE_PASSWORD'] %>
