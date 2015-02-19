@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :experiments do
     collection do
       get 'index'
+      get 'show'
       # get 'getlightnodes'
       # get 'gettemperaturenodes'
     end
