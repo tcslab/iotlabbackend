@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :experiments, :path => '/'
+
+  resources :experiments do
+    # collection do
+    #   get 'getnodes'
+    #   get 'getlightnodes'
+    #   get 'gettemperaturenodes'
+    # end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
