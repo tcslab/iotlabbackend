@@ -2,7 +2,7 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :contact do |f|
+  factory :experiment do |f|
     # f.firstname { Faker::Name.first_name }
     f.title "Lulea meeting experiment"
     f.description "In order to test the IoT Lab this service show the potential usage of smartphone crowdsource"

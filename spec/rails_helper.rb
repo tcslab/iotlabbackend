@@ -47,4 +47,9 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  # FactoryGirl.definition_file_paths = [File.expand_path('../factories', __FILE__)]
+  # FactoryGirl.find_definitions
+  # config.before(:all) do
+  #     FactoryGirl.reload
+  # end
 end
