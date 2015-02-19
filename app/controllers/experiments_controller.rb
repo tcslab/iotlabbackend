@@ -1,10 +1,16 @@
 class ExperimentsController < ApplicationController
+  respond_to :json
   before_action :set_experiment, only: [:show, :edit, :update, :destroy]
 
   # GET /experiments
   # GET /experiments.json
   def index
+    # @experiments = Experiment.all
+
     @experiments = Experiment.all
+    respond_with(@experiments) do |format|
+      format.json { render :json => @experiments.as_json }
+    end
   end
 
   # GET /experiments/1
