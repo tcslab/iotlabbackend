@@ -22,5 +22,7 @@ FactoryGirl.define do
     f.employment_status "full-time"
     f.camera "sdfasdf"
     f.accelerometer "23"
+    f.location_sensor "aa"
+    f.magnetometer "23"
   end
 end

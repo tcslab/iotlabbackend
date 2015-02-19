@@ -24,4 +24,6 @@ RSpec.describe Experiment, type: :model do
   it "is invalid without a employment_status"
   it "is invalid without a camera"
   it "is invalid without a accelerometer"
+  it "is invalid without a location_sensor"
+  it "is invalid without a magnetometer"
 end
