@@ -12,16 +12,18 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  host: <%= Rails.application.secrets[:database][:host] %>
+#  host: <%= Rails.application.secrets[:database][:host] %>
   database: <%= Rails.application.secrets[:database][:name] %>
-  username: <%= Rails.application.secrets[:database][:username] %>
-  password: <%= Rails.application.secrets[:database][:password] %>
+#  username: <%= Rails.application.secrets[:database][:username] %>
+#  password: <%= Rails.application.secrets[:database][:password] %>
+  username: root
+  password: alisql
   socket: /var/run/mysqld/mysqld.sock
   pool: 5
 
 development: *default
 test: *default
-production: *default
+#production: *default
 
 
 # Warning: The database defined as "test" will be erased and
@@ -51,4 +53,4 @@ production:
   <<: *default
   database: iotlabbackendlulea_production
   username: iotlabbackend
-  password: <%= ENV['IOTLABBACKEND_DATABASE_PASSWORD'] %>
+  password: <%= ENV['RAILSEARCHER_DATABASE_PASSWORD'] %>
