@@ -13,7 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
 #  host: <%= Rails.application.secrets[:database][:host] %>
-  database: <%= Rails.application.secrets[:database][:name] %>
+#  database: <%= Rails.application.secrets[:database][:name] %>
 #  username: <%= Rails.application.secrets[:database][:username] %>
 #  password: <%= Rails.application.secrets[:database][:password] %>
   username: root
@@ -21,8 +21,14 @@ default: &default
   socket: /var/run/mysqld/mysqld.sock
   pool: 5
 
-development: *default
-test: *default
+development: 
+  <<: *default
+  database: iotlabbackendlulea_development
+
+
+test: 
+  <<: *default
+  database: iotlabbackendlulea_test
 #production: *default
 
 
@@ -52,5 +58,3 @@ test: *default
 production:
   <<: *default
   database: iotlabbackendlulea_production
-  username: iotlabbackend
-  password: <%= ENV['RAILSEARCHER_DATABASE_PASSWORD'] %>
