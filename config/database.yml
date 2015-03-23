@@ -10,25 +10,19 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-#  host: <%= Rails.application.secrets[:database][:host] %>
-#  database: <%= Rails.application.secrets[:database][:name] %>
-#  username: <%= Rails.application.secrets[:database][:username] %>
-#  password: <%= Rails.application.secrets[:database][:password] %>
-  username: root
-  password: alisql
-  socket: /var/run/mysqld/mysqld.sock
+  host: <%= Rails.application.secrets[:database][:host] %>
+  database: <%= Rails.application.secrets[:database][:name] %>
+  username: <%= Rails.application.secrets[:database][:username] %>
+  password: <%= Rails.application.secrets[:database][:password] %>
+  # username: iotlab
+  # password: IY8,}^Ptq5
   pool: 5
 
-development: 
-  <<: *default
-  database: iotlabbackendlulea_development
-
-
-test: 
-  <<: *default
-  database: iotlabbackendlulea_test
+development: *default
+test: *default
+production: *default
 #production: *default
 
 
@@ -55,6 +49,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: iotlabbackendlulea_production
