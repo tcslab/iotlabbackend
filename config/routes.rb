@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :interfaces
+
   resources :data_types
 
   resources :date_types
