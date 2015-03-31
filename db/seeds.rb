@@ -17,3 +17,23 @@ Interface.create([{ name: 'Link List'           , abreviation: 'll'} ,
                   { name: 'Actuator'            , abreviation: 'a'} ,
                   { name: 'Binding'             , abreviation: 'bnd'} ,
 ])
+
+1 ; "Link List"           ; "ll"
+2 ; "Batch"               ; "b"
+3 ; "Linked Batch"        ; "lb"
+4 ; "Sensor"              ; "s"
+5 ; "Parameter"           ; "p"
+6 ; "Read-Only Parameter" ; "rp"
+7 ; "Actuator"            ; "a"
+8 ; "Binding"             ; "bnd"
+
+1;"b (boolean)"
+2;"s (string)"
+3;"e (enum)"
+4;"i (integer)"
+5;"d (decimal)"
+
+ResourceType.create([{ name: '', restype: '', interface_id: , data_type_id: },
+
+])
+
