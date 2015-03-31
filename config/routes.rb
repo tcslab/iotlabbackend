@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :data_types
+
   resources :date_types
 
   resources :experiments, :path => '/'
