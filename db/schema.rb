@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 20150331134932) do
     t.string   "name"
     t.string   "restype"
     t.text     "notes"
-    t.integer  "interface_id_id"
-    t.integer  "data_types_id_id"
+    t.integer  "interface_id"
+    t.integer  "data_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "resource_types", ["data_types_id_id"], name: "index_resource_types_on_data_types_id_id", using: :btree
-  add_index "resource_types", ["interface_id_id"], name: "index_resource_types_on_interface_id_id", using: :btree
+  add_index "resource_types", ["data_type_id"], name: "index_resource_types_on_data_type_id", using: :btree
+  add_index "resource_types", ["interface_id"], name: "index_resource_types_on_interface_id", using: :btree
 
 end

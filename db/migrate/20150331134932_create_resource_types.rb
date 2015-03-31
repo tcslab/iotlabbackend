@@ -4,8 +4,8 @@ class CreateResourceTypes < ActiveRecord::Migration
       t.string :name
       t.string :restype
       t.text :notes
-      t.references :interface_id, index: true
-      t.references :data_types_id, index: true
+      t.references :interface, index: true
+      t.references :data_type, index: true
 
       t.timestamps
     end
