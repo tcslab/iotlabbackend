@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @date_type.name %>
+</p>
+
+<p>
+  <strong>Plainformat:</strong>
+  <%= @date_type.plainformat %>
+</p>
+
+<p>
+  <strong>Senml:</strong>
+  <%= @date_type.senml %>
+</p>
+
+<%= link_to 'Edit', edit_date_type_path(@date_type) %> |
+<%= link_to 'Back', date_types_path %>

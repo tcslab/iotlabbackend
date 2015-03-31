@@ -11,31 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219135932) do
+ActiveRecord::Schema.define(version: 20150331094641) do
 
-  create_table "experiments", force: true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.string   "start_datetime"
-    t.string   "end_datetime"
-    t.string   "participation"
-    t.string   "voters"
-    t.string   "ranking"
-    t.string   "interaction"
-    t.string   "status"
-    t.string   "location"
-    t.string   "radius"
-    t.string   "minimum_age"
-    t.string   "maximum_age"
-    t.string   "gender"
-    t.string   "employment_sector"
-    t.string   "employment_status"
-    t.string   "camera"
-    t.string   "accelerometer"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "date_types", force: true do |t|
+    t.string   "name",        limit: 30
+    t.string   "plainformat", limit: 30
+    t.string   "senml",       limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "location_sensor"
-    t.string   "magnetometer"
   end
 
 end

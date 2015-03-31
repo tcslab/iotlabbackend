@@ -1,0 +1,29 @@
+<h1>Listing date_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Plainformat</th>
+      <th>Senml</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @date_types.each do |date_type| %>
+      <tr>
+        <td><%= date_type.name %></td>
+        <td><%= date_type.plainformat %></td>
+        <td><%= date_type.senml %></td>
+        <td><%= link_to 'Show', date_type %></td>
+        <td><%= link_to 'Edit', edit_date_type_path(date_type) %></td>
+        <td><%= link_to 'Destroy', date_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Date type', new_date_type_path %>
