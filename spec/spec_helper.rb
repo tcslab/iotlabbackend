@@ -44,6 +44,7 @@ RSpec.configure do |config|
   config.before(:all) do
       FactoryGirl.reload
   end
+  config.include FactoryGirl::Syntax::Methods
   # FactoryGirl.definition_file_paths = [File.expand_path('../factories', __FILE__)]
   # FactoryGirl.find_definitions
 
