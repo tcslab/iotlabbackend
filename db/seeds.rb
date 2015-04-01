@@ -24,6 +24,7 @@ Interface.create([{ name: 'Link List'           , abreviation: 'll'} ,
 
 
 #Device
+FunctionSet.create({name: 'Device', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Manufacturer'         , restype: 'ipso.dev.mfg'    , interface_id: 6, data_type_id: 2} ,
                      { name: 'Model'                , restype: 'ipso.dev.mdl'    , interface_id: 6, data_type_id: 2} ,
                      { name: 'Hardware Revision'    , restype: 'ipso.dev.mdl.hw' , interface_id: 6, data_type_id: 2} ,
@@ -37,11 +38,13 @@ ResourceType.create([{ name: 'Manufacturer'         , restype: 'ipso.dev.mfg'   
 ])
 
 #Message-3
+FunctionSet.create({name: 'Message', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Status', restype: 'ipso.msg.status', interface_id: 5, data_type_id: 2},
                      { name: 'Alarms', restype: 'ipso.msg.alarms', interface_id: 5, data_type_id: 2},
                      { name: 'Display', restype: 'ipso.msg.disp',   interface_id: 5, data_type_id: 2}
 ])
 #Configuration-
+FunctionSet.create({name: 'Configuration', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Services' , restype: 'ipso.cfg.services', interface_id: 9, data_type_id: 2},
                      { name: 'Stack'    , restype: 'ipso.cfg.stack', interface_id: 5, data_type_id: 2},
                      { name: 'Stack PHY', restype: 'ipso.cfg.stack.phy', interface_id: 5, data_type_id: 2},
@@ -50,6 +53,7 @@ ResourceType.create([{ name: 'Services' , restype: 'ipso.cfg.services', interfac
                      { name: 'Stack RTG', restype: 'ipso.cfg.stack.rtg', interface_id: 5, data_type_id: 2}
 ])
 #Location-5
+FunctionSet.create({name: 'Location', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'GPS Location', restype: 'ipso.loc.gps', interface_id: 4, data_type_id: 2},
                      { name: 'XY Location', restype: 'ipso.loc.xy', interface_id: 4, data_type_id: 2},
                      { name: 'Semantic Location', restype: 'ipso.loc.sem', interface_id: 4, data_type_id: 2},
@@ -57,6 +61,7 @@ ResourceType.create([{ name: 'GPS Location', restype: 'ipso.loc.gps', interface_
                      { name: 'Period', restype: 'ipso.loc.per', interface_id: 5, data_type_id: 4}
 ])
 #Load Control-6
+FunctionSet.create({name: 'Load Control', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Event Identifier', restype: 'ipso.load.id', interface_id: 5, data_type_id: 2},
                      { name: 'Start Time', restype: 'ipso.load.time', interface_id: 5, data_type_id: 6},
                      { name: 'Duration In Min', restype: 'ipso.load.dur', interface_id: 5, data_type_id: 4},
@@ -65,6 +70,7 @@ ResourceType.create([{ name: 'Event Identifier', restype: 'ipso.load.id', interf
                      { name: 'Duty Cycle', restype: 'ipso.load.dc', interface_id: 5, data_type_id: 4}
 ])
 #Light Control-7
+FunctionSet.create({name: 'Light Control', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'On/Off', restype: 'ipso.lt.on', interface_id: 7, data_type_id: 1},
                      { name: 'Dimmer', restype: 'ipso.lt.dim', interface_id: 7, data_type_id: 4},
                      { name: 'Colour', restype: 'ipso.lt.col', interface_id: 7, data_type_id: 2},
@@ -74,12 +80,14 @@ ResourceType.create([{ name: 'On/Off', restype: 'ipso.lt.on', interface_id: 7, d
                      { name: 'Power factor', restype: 'ipso.lt.pf', interface_id: 7, data_type_id: 7}
 ])
 #Set points-4
+FunctionSet.create({name: 'Set Point', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Set Point Value', restype: 'ipso.sp.spv', interface_id: 9, data_type_id: 7},
                      { name: 'Colour', restype: 'ipso.sp.col', interface_id: 9, data_type_id: 2},
                      { name: 'Units', restype: 'ipso.sp.unit', interface_id: 9, data_type_id: 2},
                      { name: 'Application Type', restype: 'ipso.sp.at', interface_id: 9, data_type_id: 2}
 ])
 #Humidity Sensor-7
+FunctionSet.create({name: 'Humidity Sensor', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Sensor Value', restype: 'ipso.hum.sv', interface_id: 9, data_type_id: 7},
                      { name: 'Units', restype: 'ipso.hum.col', interface_id: 9, data_type_id: 2},
                      { name: 'Min Measured Value', restype: 'ipso.hum.unit', interface_id: 9, data_type_id: 7},
@@ -89,6 +97,7 @@ ResourceType.create([{ name: 'Sensor Value', restype: 'ipso.hum.sv', interface_i
                      { name: 'Reset Min and Max Measured Values', restype: '', interface_id: 9, data_type_id: 8}
 ])
 #Temperature Sensor-7
+FunctionSet.create({name: 'Temperature Sensor', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ipso.hum.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Units'                             , restype: 'ipso.hum.' , interface_id: 9 , data_type_id: 2} ,
                      { name: 'Min Measured Value'                , restype: 'ipso.hum.' , interface_id: 9 , data_type_id: 7} ,
@@ -98,6 +107,7 @@ ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ips
                      { name: 'Reset Min and Max Measured Values' , restype: 'ipso.hum.' , interface_id: 9 , data_type_id: 8}
 ])
 #Illuminance Sensor-7
+FunctionSet.create({name: 'Illuminance Sensor', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ipso.lum.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Units'                             , restype: 'ipso.lum.' , interface_id: 9 , data_type_id: 2} ,
                      { name: 'Min Measured Value'                , restype: 'ipso.lum.' , interface_id: 9 , data_type_id: 7} ,
@@ -107,6 +117,7 @@ ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ips
                      { name: 'Reset Min and Max Measured Values' , restype: 'ipso.lum.' , interface_id: 9 , data_type_id: 8}
 ])
 #Generic Sensor-7
+FunctionSet.create({name: 'Generic Sensor', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ipso.gsen.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Units'                             , restype: 'ipso.gsen.' , interface_id: 9 , data_type_id: 2} ,
                      { name: 'Min Measured Value'                , restype: 'ipso.gsen.' , interface_id: 9 , data_type_id: 7} ,
@@ -118,6 +129,7 @@ ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ips
                      { name: 'Sensor Type'                       , restype: 'ipso.gsen.' , interface_id: 9 , data_type_id: 2}
 ])
 #Power Measurements-18
+FunctionSet.create({name: 'Power Measurement', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Instantaneous active power'        , restype: 'ipso.pm.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Min Measured active power'         , restype: 'ipso.pm.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Max Measured active power'         , restype: 'ipso.pm.' , interface_id: 9 , data_type_id: 7} ,
@@ -138,6 +150,7 @@ ResourceType.create([{ name: 'Instantaneous active power'        , restype: 'ips
                      { name: 'Reset Cumulative energy'           , restype: 'ipso.pm.' , interface_id: 9 , data_type_id: 8}
 ])
 #Actuation-5
+FunctionSet.create({name: 'Actuation', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'On/Off'            , restype: 'ipso.act.' , interface_id: 9 , data_type_id: 1} ,
                      { name: 'Dimmer'            , restype: 'ipso.act.' , interface_id: 9 , data_type_id: 4} ,
                      { name: 'On Time'           , restype: 'ipso.act.' , interface_id: 9 , data_type_id: 4} ,
@@ -145,6 +158,7 @@ ResourceType.create([{ name: 'On/Off'            , restype: 'ipso.act.' , interf
                      { name: 'Application Type'  , restype: 'ipso.act.' , interface_id: 9 , data_type_id: 2}
 ])
 #Magnetometers-5
+FunctionSet.create({name: 'Magnetometer', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'X Value'           , restype: 'ipso.mag.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Y Value'           , restype: 'ipso.mag.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Z Value'           , restype: 'ipso.mag.' , interface_id: 9 , data_type_id: 7} ,
@@ -152,6 +166,7 @@ ResourceType.create([{ name: 'X Value'           , restype: 'ipso.mag.' , interf
                      { name: 'Compass Direction' , restype: 'ipso.mag.' , interface_id: 9 , data_type_id: 7}
 ])
 #Barometer-7
+FunctionSet.create({name: 'Barometer', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ipso.bar.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Units'                             , restype: 'ipso.bar.' , interface_id: 9 , data_type_id: 2} ,
                      { name: 'Min Measured Value'                , restype: 'ipso.bar.' , interface_id: 9 , data_type_id: 7} ,
@@ -161,6 +176,7 @@ ResourceType.create([{ name: 'Sensor Value'                      , restype: 'ips
                      { name: 'Reset Min and Max Measured Values' , restype: 'ipso.bar.' , interface_id: 9 , data_type_id: 8}
 ])
 #Power Control-5
+FunctionSet.create({name: 'Power Control', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'On/Off'                            , restype: 'ipso.poc.' , interface_id: 9 , data_type_id: 1} ,
                      { name: 'Dimmer'                            , restype: 'ipso.poc.' , interface_id: 9 , data_type_id: 4} ,
                      { name: 'On Time'                           , restype: 'ipso.poc.' , interface_id: 9 , data_type_id: 4} ,
@@ -168,6 +184,7 @@ ResourceType.create([{ name: 'On/Off'                            , restype: 'ips
                      { name: 'Power factor'                      , restype: 'ipso.poc.' , interface_id: 9 , data_type_id: 7}
 ])
 #Presence-6
+FunctionSet.create({name: 'Presence Sensor', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Digital Input State'               , restype: 'ipso.pre.' , interface_id: 9 , data_type_id: 1} ,
                      { name: 'Digital Input Counter'             , restype: 'ipso.pre.' , interface_id: 9 , data_type_id: 4} ,
                      { name: 'Digital Input Counter Reset'       , restype: 'ipso.pre.' , interface_id: 9 , data_type_id: 8} ,
@@ -176,12 +193,14 @@ ResourceType.create([{ name: 'Digital Input State'               , restype: 'ips
                      { name: 'Clear to Busy delay'               , restype: 'ipso.pre.' , interface_id: 9 , data_type_id: 4}
 ])
 #Analog_output-4
+FunctionSet.create({name: 'Analogue Output', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Analog Output Current Value'       , restype: 'ipso.ao.'  , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Min Range Value'                   , restype: 'ipso.ao.'  , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Max Range Value'                   , restype: 'ipso.ao.'  , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Application Type'                  , restype: 'ipso.ao.'  , interface_id: 9 , data_type_id: 2}
 ])
 #Analog_input-6
+FunctionSet.create({name: 'Analogue Input', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Analog Input Current Value'        , restype: 'ipso.ai'   , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Min Measured Value'                , restype: 'ipso.ai'   , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Max Measured Value'                , restype: 'ipso.ai'   , interface_id: 9 , data_type_id: 7} ,
@@ -192,11 +211,13 @@ ResourceType.create([{ name: 'Analog Input Current Value'        , restype: 'ips
                      { name: 'Sensor Type'                       , restype: 'ipso.ai'   , interface_id: 9 , data_type_id: 2}
 ])
 #Digital_output-3
+FunctionSet.create({name: 'Digital Output', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Digital Output State'    , restype: 'ipso.do.' , interface_id: 9 , data_type_id: 1} ,
                      { name: 'Digital Output Polarity' , restype: 'ipso.do.' , interface_id: 9 , data_type_id: 1} ,
                      { name: 'Application Type'        , restype: 'ipso.do.' , interface_id: 9 , data_type_id: 2}
 ])
 #Digital_input-8
+FunctionSet.create({name: 'Digital Input', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'Digital Input State'           , restype: 'ipso.di.' , interface_id: 9 , data_type_id: 1} ,
                      { name: 'Digital Input Counter'         , restype: 'ipso.di.' , interface_id: 9 , data_type_id: 4} ,
                      { name: 'Digital Input Polarity'        , restype: 'ipso.di.' , interface_id: 9 , data_type_id: 1} ,
@@ -207,6 +228,7 @@ ResourceType.create([{ name: 'Digital Input State'           , restype: 'ipso.di
                      { name: 'Sensor Type'                   , restype: 'ipso.di.' , interface_id: 9 , data_type_id: 2}
 ])
 #Accelerometer-6
+FunctionSet.create({name: 'Accelerometer', restype: '', description: '', root_path: ''})
 ResourceType.create([{ name: 'X Value'         , restype: 'ipso.acl.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Y Value'         , restype: 'ipso.acl.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Z Value'         , restype: 'ipso.acl.' , interface_id: 9 , data_type_id: 7} ,
@@ -214,3 +236,4 @@ ResourceType.create([{ name: 'X Value'         , restype: 'ipso.acl.' , interfac
                      { name: 'Min Range Value' , restype: 'ipso.acl.' , interface_id: 9 , data_type_id: 7} ,
                      { name: 'Max Range Value' , restype: 'ipso.acl.' , interface_id: 9 , data_type_id: 7}
 ])
+
