@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @function_set.name %>
+</p>
+
+<p>
+  <strong>Restype:</strong>
+  <%= @function_set.restype %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @function_set.description %>
+</p>
+
+<p>
+  <strong>Root path:</strong>
+  <%= @function_set.root_path %>
+</p>
+
+<%= link_to 'Edit', edit_function_set_path(@function_set) %> |
+<%= link_to 'Back', function_sets_path %>

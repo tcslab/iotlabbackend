@@ -1,0 +1,33 @@
+<%= form_for(@function_set) do |f| %>
+  <% if @function_set.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@function_set.errors.count, "error") %> prohibited this function_set from being saved:</h2>
+
+      <ul>
+      <% @function_set.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :restype %><br>
+    <%= f.text_field :restype %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :root_path %><br>
+    <%= f.text_field :root_path %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

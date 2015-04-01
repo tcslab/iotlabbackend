@@ -1,0 +1,31 @@
+<h1>Listing function_sets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Restype</th>
+      <th>Description</th>
+      <th>Root path</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @function_sets.each do |function_set| %>
+      <tr>
+        <td><%= function_set.name %></td>
+        <td><%= function_set.restype %></td>
+        <td><%= function_set.description %></td>
+        <td><%= function_set.root_path %></td>
+        <td><%= link_to 'Show', function_set %></td>
+        <td><%= link_to 'Edit', edit_function_set_path(function_set) %></td>
+        <td><%= link_to 'Destroy', function_set, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Function set', new_function_set_path %>

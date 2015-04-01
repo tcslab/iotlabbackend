@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331134932) do
+ActiveRecord::Schema.define(version: 20150401175720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20150331134932) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "function_sets", force: true do |t|
+    t.string   "name",        limit: 30
+    t.string   "restype"
+    t.text     "description"
+    t.string   "root_path",   limit: 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "function_sets", ["name"], name: "index_function_sets_on_name", unique: true, using: :btree
 
   create_table "interfaces", force: true do |t|
     t.string   "name",        limit: 30
