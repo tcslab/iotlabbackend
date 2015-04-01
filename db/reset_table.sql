@@ -1,0 +1,1 @@
+﻿TRUNCATE TABLE resource_types RESTART IDENTITY;
