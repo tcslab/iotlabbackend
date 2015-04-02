@@ -1,3 +1,3 @@
 class Interface < ActiveRecord::Base
-  has_one :resource_type
+  has_many :resource_types
 end
