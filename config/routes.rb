@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :nodes
+
   resources :function_sets
 
   resources :interfaces
