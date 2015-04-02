@@ -1,0 +1,33 @@
+<%= form_for(@resource) do |f| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+
+      <ul>
+      <% @resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ipso_index %><br>
+    <%= f.number_field :ipso_index %>
+  </div>
+  <div class="field">
+    <%= f.label :function_set_id_id %><br>
+    <%= f.text_field :function_set_id_id %>
+  </div>
+  <div class="field">
+    <%= f.label :node_id_id %><br>
+    <%= f.text_field :node_id_id %>
+  </div>
+  <div class="field">
+    <%= f.label :resource_type_id %><br>
+    <%= f.text_field :resource_type_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
