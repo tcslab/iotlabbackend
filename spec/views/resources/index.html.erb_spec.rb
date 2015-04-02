@@ -4,6 +4,7 @@ RSpec.describe "resources/index", type: :view do
   before(:each) do
     assign(:resources, [
       Resource.create!(
+        :name => "blabla",
         :ipso_index => 1,
         :function_set_id => nil,
         :node_id => nil,

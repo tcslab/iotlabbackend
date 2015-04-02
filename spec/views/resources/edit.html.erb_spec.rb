@@ -4,6 +4,7 @@ RSpec.describe "resources/edit", type: :view do
   before(:each) do
     @resource = assign(:resource, Resource.create!(
       :ipso_index => 1,
+      :name => "",
       :function_set_id => nil,
       :node_id => nil,
       :resource_type_id => ""

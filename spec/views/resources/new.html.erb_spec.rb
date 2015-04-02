@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "resources/new", type: :view do
   before(:each) do
     assign(:resource, Resource.new(
+      :name => "",
       :ipso_index => 1,
       :function_set_id => nil,
       :node_id => nil,
