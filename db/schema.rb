@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402155856) do
+ActiveRecord::Schema.define(version: 20150403060451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,9 +44,10 @@ ActiveRecord::Schema.define(version: 20150402155856) do
 
   create_table "nodes", force: true do |t|
     t.string   "name",       limit: 30
-    t.string   "location",   limit: 50
     t.boolean  "phone_flag"
     t.string   "urn",        limit: 30
+    t.decimal  "latitude",              precision: 10, scale: 6
+    t.decimal  "longitude",             precision: 10, scale: 6
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,16 +67,17 @@ ActiveRecord::Schema.define(version: 20150402155856) do
 
   create_table "resources", force: true do |t|
     t.integer  "ipso_index"
-    t.integer  "function_set_id_id"
-    t.integer  "node_id_id"
-    t.integer  "resource_type_id_id"
+    t.integer  "function_set_id"
+    t.integer  "node_id"
+    t.string   "name",             limit: 40
+    t.integer  "resource_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",                limit: 40
   end
 
-  add_index "resources", ["function_set_id_id"], name: "index_resources_on_function_set_id_id", using: :btree
-  add_index "resources", ["name"], name: "index_resources_on_name", unique: true, using: :btree
-  add_index "resources", ["node_id_id"], name: "index_resources_on_node_id_id", using: :btree
+  add_index "resources" , ["function_set_id"]  , name: "index_resources_on_function_set_id"  , using: :btree
+  add_index "resources" , ["resource_type_id"] , name: "index_resources_on_resource_type_id" , using: :btree
+  add_index "resources" , ["node_id"]          , name: "index_resources_on_node_id"          , using: :btree
+  add_index "resources" , ["name"]             , name: "index_resources_on_name"             , unique: true  , using: :btree
 
 end
