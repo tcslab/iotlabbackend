@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   resources :resources
 
-  resources :nodes
+  resources :nodes do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
 
   resources :function_sets
 
