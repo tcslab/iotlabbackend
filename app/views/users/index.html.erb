@@ -1,0 +1,63 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Address</th>
+      <th>Hometown</th>
+      <th>Country</th>
+      <th>Gender</th>
+      <th>Education</th>
+      <th>Birthdate</th>
+      <th>Employment sector</th>
+      <th>Employment status</th>
+      <th>Username</th>
+      <th>Password hash</th>
+      <th>Email</th>
+      <th>Email confirmed</th>
+      <th>Security stamp</th>
+      <th>Phone number</th>
+      <th>Phone number confirmed</th>
+      <th>Two factor confirmed</th>
+      <th>Lockout end date utc</th>
+      <th>Access failed count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.surname %></td>
+        <td><%= user.address %></td>
+        <td><%= user.hometown %></td>
+        <td><%= user.country %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.education %></td>
+        <td><%= user.birthdate %></td>
+        <td><%= user.employment_sector %></td>
+        <td><%= user.employment_status %></td>
+        <td><%= user.username %></td>
+        <td><%= user.password_hash %></td>
+        <td><%= user.email %></td>
+        <td><%= user.email_confirmed %></td>
+        <td><%= user.security_stamp %></td>
+        <td><%= user.phone_number %></td>
+        <td><%= user.phone_number_confirmed %></td>
+        <td><%= user.two_factor_confirmed %></td>
+        <td><%= user.lockout_end_date_utc %></td>
+        <td><%= user.access_failed_count %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

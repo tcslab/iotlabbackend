@@ -1,0 +1,104 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @user.surname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Hometown:</strong>
+  <%= @user.hometown %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @user.country %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @user.education %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @user.birthdate %>
+</p>
+
+<p>
+  <strong>Employment sector:</strong>
+  <%= @user.employment_sector %>
+</p>
+
+<p>
+  <strong>Employment status:</strong>
+  <%= @user.employment_status %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Password hash:</strong>
+  <%= @user.password_hash %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Email confirmed:</strong>
+  <%= @user.email_confirmed %>
+</p>
+
+<p>
+  <strong>Security stamp:</strong>
+  <%= @user.security_stamp %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @user.phone_number %>
+</p>
+
+<p>
+  <strong>Phone number confirmed:</strong>
+  <%= @user.phone_number_confirmed %>
+</p>
+
+<p>
+  <strong>Two factor confirmed:</strong>
+  <%= @user.two_factor_confirmed %>
+</p>
+
+<p>
+  <strong>Lockout end date utc:</strong>
+  <%= @user.lockout_end_date_utc %>
+</p>
+
+<p>
+  <strong>Access failed count:</strong>
+  <%= @user.access_failed_count %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

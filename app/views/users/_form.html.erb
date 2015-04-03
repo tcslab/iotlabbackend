@@ -1,0 +1,97 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname %><br>
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :hometown %><br>
+    <%= f.text_field :hometown %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :education %><br>
+    <%= f.text_field :education %>
+  </div>
+  <div class="field">
+    <%= f.label :birthdate %><br>
+    <%= f.date_select :birthdate %>
+  </div>
+  <div class="field">
+    <%= f.label :employment_sector %><br>
+    <%= f.text_field :employment_sector %>
+  </div>
+  <div class="field">
+    <%= f.label :employment_status %><br>
+    <%= f.text_field :employment_status %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password_hash %><br>
+    <%= f.text_field :password_hash %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :email_confirmed %><br>
+    <%= f.check_box :email_confirmed %>
+  </div>
+  <div class="field">
+    <%= f.label :security_stamp %><br>
+    <%= f.text_area :security_stamp %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number_confirmed %><br>
+    <%= f.check_box :phone_number_confirmed %>
+  </div>
+  <div class="field">
+    <%= f.label :two_factor_confirmed %><br>
+    <%= f.check_box :two_factor_confirmed %>
+  </div>
+  <div class="field">
+    <%= f.label :lockout_end_date_utc %><br>
+    <%= f.datetime_select :lockout_end_date_utc %>
+  </div>
+  <div class="field">
+    <%= f.label :access_failed_count %><br>
+    <%= f.number_field :access_failed_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

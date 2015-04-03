@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403060451) do
+ActiveRecord::Schema.define(version: 20150403090846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20150403060451) do
     t.string   "name",       limit: 30
     t.boolean  "phone_flag"
     t.string   "urn",        limit: 30
-    t.decimal  "latitude",              precision: 10, scale: 6
-    t.decimal  "longitude",             precision: 10, scale: 6
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "latitude",              precision: 10, scale: 6
+    t.decimal  "longitude",             precision: 10, scale: 6
   end
 
   create_table "resource_types", force: true do |t|
@@ -69,15 +69,40 @@ ActiveRecord::Schema.define(version: 20150403060451) do
     t.integer  "ipso_index"
     t.integer  "function_set_id"
     t.integer  "node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name",             limit: 40
     t.integer  "resource_type_id"
+  end
+
+  add_index "resources", ["function_set_id"], name: "index_resources_on_function_set_id", using: :btree
+  add_index "resources", ["name"], name: "index_resources_on_name", unique: true, using: :btree
+  add_index "resources", ["node_id"], name: "index_resources_on_node_id", using: :btree
+  add_index "resources", ["resource_type_id"], name: "index_resources_on_resource_type_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "name",                   limit: 20
+    t.string   "surname",                limit: 20
+    t.string   "address"
+    t.string   "hometown",               limit: 40
+    t.string   "country",                limit: 30
+    t.string   "gender",                 limit: 10
+    t.string   "education"
+    t.date     "birthdate"
+    t.string   "employment_sector",      limit: 50
+    t.string   "employment_status",      limit: 50
+    t.string   "username",               limit: 30,                                 null: false
+    t.string   "password_hash"
+    t.string   "email",                  limit: 30,                                 null: false
+    t.boolean  "email_confirmed",                   default: false,                 null: false
+    t.text     "security_stamp"
+    t.string   "phone_number",           limit: 50
+    t.boolean  "phone_number_confirmed",            default: false,                 null: false
+    t.boolean  "two_factor_confirmed",              default: false,                 null: false
+    t.datetime "lockout_end_date_utc",              default: '2015-04-03 09:10:43', null: false
+    t.integer  "access_failed_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "resources" , ["function_set_id"]  , name: "index_resources_on_function_set_id"  , using: :btree
-  add_index "resources" , ["resource_type_id"] , name: "index_resources_on_resource_type_id" , using: :btree
-  add_index "resources" , ["node_id"]          , name: "index_resources_on_node_id"          , using: :btree
-  add_index "resources" , ["name"]             , name: "index_resources_on_name"             , unique: true  , using: :btree
 
 end
