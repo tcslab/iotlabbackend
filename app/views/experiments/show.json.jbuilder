@@ -1,0 +1,1 @@
+json.extract! @experiment, :id, :title, :description, :start_datetime, :end_datetime, :participation, :devices, :voters, :ranking, :interaction, :status, :latitude, :longitude, :location, :radius, :minimum_age, :maximum_age, :gender, :employment_sector, :employment_status, :camera, :accelerometer, :created_at, :updated_at
