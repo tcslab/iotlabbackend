@@ -1,4 +1,6 @@
 class ResourcesController < ApplicationController
+  respond_to :json
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_resource, only: [:show, :edit, :update, :destroy]
 
   # GET /resources
@@ -69,6 +71,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:name, :ipso_index, :function_set_id_id, :node_id_id, :resource_type_id)
+      params.require(:resource).permit(:name, :ipso_index, :function_set_id, :node_id, :resource_type_id)
     end
 end
