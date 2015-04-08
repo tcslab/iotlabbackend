@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :resources
+  resources :resources do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
+
 
   resources :nodes do
     collection do
@@ -19,8 +25,6 @@ Rails.application.routes.draw do
   resources :interfaces
 
   resources :data_types
-
-  resources :date_types
 
   resources :experiments, :path => '/'
 

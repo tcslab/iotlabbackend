@@ -7,6 +7,9 @@ class ResourcesController < ApplicationController
   # GET /resources.json
   def index
     @resources = Resource.all
+    respond_with(@resources) do |format|
+      format.json { render :json => @resources.as_json }
+    end
   end
 
   # GET /resources/1

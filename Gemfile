@@ -30,6 +30,7 @@ group :development do
   gem 'libnotify'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'rails-erd'
 end
 
 
