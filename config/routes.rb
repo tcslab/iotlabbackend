@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   # resources :experiments
 
-  resources :providers
+  resources :providers do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
+
 
   resources :users
 

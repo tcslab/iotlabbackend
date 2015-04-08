@@ -1,10 +1,15 @@
 class ProvidersController < ApplicationController
+  respond_to :json
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   # GET /providers
   # GET /providers.json
   def index
     @providers = Provider.all
+    respond_with(@providers) do |format|
+      format.json { render :json => @providers.as_json }
+    end
   end
 
   # GET /providers/1
