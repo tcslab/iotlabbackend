@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
+  respond_to :json
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    respond_with(@users) do |format|
+      format.json { render :json => @users.as_json }
+    end
   end
 
   # GET /users/1

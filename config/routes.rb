@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   end
 
 
-  resources :users
+  resources :users do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
+
 
   resources :resources do
     collection do
