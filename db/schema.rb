@@ -72,11 +72,11 @@ ActiveRecord::Schema.define(version: 20150409115838) do
     t.string   "name",        limit: 30
     t.boolean  "phone_flag"
     t.string   "urn",         limit: 30
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.decimal  "latitude",               precision: 10, scale: 6
     t.decimal  "longitude",              precision: 10, scale: 6
     t.integer  "provider_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "nodes", ["provider_id"], name: "index_nodes_on_provider_id", using: :btree

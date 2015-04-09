@@ -74,6 +74,6 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:name, :location, :phone_flag, :urn)
+      params.require(:node).permit(:name, :latitude, :longitude, :provider_id, :phone_flag, :urn)
     end
 end

@@ -4,7 +4,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Location</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>provider_id</th>
       <th>Phone flag</th>
       <th>Urn</th>
       <th colspan="3"></th>
@@ -15,7 +17,9 @@
     <% @nodes.each do |node| %>
       <tr>
         <td><%= node.name %></td>
-        <td><%= node.location %></td>
+        <td><%= node.latitude %></td>
+        <td><%= node.longitude %></td>
+        <td><%= node.provider_id %></td>
         <td><%= node.phone_flag %></td>
         <td><%= node.urn %></td>
         <td><%= link_to 'Show', node %></td>

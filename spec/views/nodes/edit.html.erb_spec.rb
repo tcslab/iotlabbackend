@@ -4,7 +4,9 @@ RSpec.describe "nodes/edit", type: :view do
   before(:each) do
     @node = assign(:node, Node.create!(
       :name => "MyString",
-      :location => "MyString",
+      :latitude => 46.176388,
+      :longitude => 6.139959,
+      :provider_id => 1,
       :phone_flag => false,
       :urn => "MyString"
     ))
@@ -17,7 +19,11 @@ RSpec.describe "nodes/edit", type: :view do
 
       assert_select "input#node_name[name=?]", "node[name]"
 
-      assert_select "input#node_location[name=?]", "node[location]"
+      assert_select "input#node_latitude[name=?]", "node[latitude]"
+
+      assert_select "input#node_longitude[name=?]", "node[longitude]"
+
+      assert_select "input#node_provider_id[name=?]", "node[provider_id]"
 
       assert_select "input#node_phone_flag[name=?]", "node[phone_flag]"
 
