@@ -9,6 +9,9 @@ RSpec.describe Node, type: :model do
     before { FactoryGirl.build(:node) }
 
     it { is_expected.to validate_presence_of :name }
+    it { is_expected.to validate_presence_of :latitude }
+    it { is_expected.to validate_presence_of :longitude }
+    it { is_expected.to validate_presence_of :urn }
 
   end
 end

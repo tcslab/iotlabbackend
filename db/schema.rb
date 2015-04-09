@@ -110,12 +110,12 @@ ActiveRecord::Schema.define(version: 20150409115838) do
 
   create_table "resources", force: true do |t|
     t.integer  "ipso_index"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name",             limit: 40
     t.integer  "resource_type_id"
     t.integer  "function_set_id"
     t.integer  "node_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "resources", ["function_set_id"], name: "index_resources_on_function_set_id", using: :btree
