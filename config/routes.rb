@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :nodes do
     collection do
       get 'get_nodes_by_location'
+      get 'nodes_by_provider'
       get 'index'
       get 'show'
     end

@@ -11,4 +11,7 @@ class Node < ActiveRecord::Base
     Node.where(latitude: la,longitude: lo)
   end
 
+  def self.get_nodes_by_provider(provider_id)
+    Node.where(provider_id: provider_id)
+  end
 end
