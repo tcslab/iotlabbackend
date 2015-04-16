@@ -12,11 +12,17 @@ class ResourcesController < ApplicationController
     end
   end
 
-  # GET /resources/1
+  # GET /resources/get_resources_by_type.json
+  def get_resources_by_type
+    @resources = Resource.resources_by_type(params[:provider_id])
+    respond_with(@resources) do |format|
+      format.json { render :json => @resources.as_json }
+    end
+  end
+
   # GET /resources/1.json
   def show
   end
-
 
   # GET /resources/new
   def new

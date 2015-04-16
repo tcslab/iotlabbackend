@@ -20,6 +20,14 @@ Rails.application.routes.draw do
     collection do
       get 'index'
       get 'show'
+      get 'get_resources_by_type'
+    end
+  end
+
+  resources :resource_types do
+    collection do
+      get 'index'
+      get 'show'
     end
   end
 

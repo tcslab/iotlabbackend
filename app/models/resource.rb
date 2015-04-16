@@ -7,14 +7,7 @@ class Resource < ActiveRecord::Base
   validates :function_set_id, :presence => true
   validates :node_id , :presence => true
 
-
-  # #TODO
-  # def self.get_resources_by_provider
-  #   nil
-  # end
-
-  # #TODO
-  # def self.get_resources_by_type
-  #   nil
-  # end
+  def self.resources_by_type(resource_type_id)
+    Resource.where(resource_type_id: resource_type_id)
+  end
 end
