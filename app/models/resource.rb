@@ -7,11 +7,6 @@ class Resource < ActiveRecord::Base
   validates :function_set_id, :presence => true
   validates :node_id , :presence => true
 
-  def self.get_resources_by_location(latitude,longitude)
-    la = BigDecimal(latitude)
-    lo = BigDecimal(longitude)
-    Node.where(latitude: la,longitude: lo)
-  end
 
   # #TODO
   # def self.get_resources_by_provider

@@ -17,6 +17,7 @@ class ResourcesController < ApplicationController
   def show
   end
 
+
   # GET /resources/new
   def new
     @resource = Resource.new

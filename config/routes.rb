@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # resources :experiments
 
   resources :providers do
     collection do
@@ -24,9 +23,9 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :nodes do
     collection do
+      get 'get_nodes_by_location'
       get 'index'
       get 'show'
     end
