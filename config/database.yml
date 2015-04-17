@@ -32,11 +32,16 @@ test:
   database: <%= Rails.application.secrets[:database][:name] %>
 
 production:
+  <<: *default
   secret_key_base: <%= ENV['DB_SECRET'] %>
-  host: <%= ENV['DB_SECRET'] %>
-  database: <%= ENV['DBNAME'] %>
-  username: <%= ENV['DBUSERNAME'] %>
-  password: <%= ENV['DBPASSWORD'] %>
+  # host: <%= ENV['DB_SECRET'] %>
+  # database: <%= ENV['DBNAME'] %>
+  # username: <%= ENV['DBUSERNAME'] %>
+  # password: <%= ENV['DBPASSWORD'] %>
+  host: 129.194.70.52
+  database: iotlabbackendlulea_production
+  username: iotlabadministrator
+  password: <%= ENV['RAILSEARCHER_DATABASE_PASSWORD'] %>
 #production: *default
 
 
