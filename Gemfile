@@ -38,7 +38,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'guard-rspec'
+#  gem 'guard-rspec'
   gem 'pry-rails'
   gem 'shoulda-matchers'
 end
