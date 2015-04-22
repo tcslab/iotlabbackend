@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Reservation:</strong>
+  <%= @resource_reservation.reservation %>
+</p>
+
+<p>
+  <strong>Resource:</strong>
+  <%= @resource_reservation.resource %>
+</p>
+
+<%= link_to 'Edit', edit_resource_reservation_path(@resource_reservation) %> |
+<%= link_to 'Back', resource_reservations_path %>

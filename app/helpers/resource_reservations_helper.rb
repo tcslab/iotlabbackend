@@ -1,0 +1,2 @@
+module ResourceReservationsHelper
+end
