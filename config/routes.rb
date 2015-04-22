@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :resource_reservations
+  resources :resource_reservations do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
+
 
   resources :reservations do
     collection do
