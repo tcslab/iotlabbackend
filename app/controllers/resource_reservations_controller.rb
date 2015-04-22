@@ -1,10 +1,15 @@
 class ResourceReservationsController < ApplicationController
+  respond_to :json
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_resource_reservation, only: [:show, :edit, :update, :destroy]
 
   # GET /resource_reservations
   # GET /resource_reservations.json
   def index
     @resource_reservations = ResourceReservation.all
+    respond_with(@resource_reservations) do |format|
+      format.json { render :json => @resource_reservations.as_json }
+    end
   end
 
   # GET /resource_reservations/1
