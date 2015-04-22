@@ -70,3 +70,8 @@ application/json" -X POST -d '
 "end_datetime":"23-02-2015
 14:50:00","reservation_key":"uMysLOdoTwSF8vllOaBtJqyo8OSm8Mcd2A_pk65qjqbrMwx6St80AA","user_id":
 1}}' http://129.194.70.52:8000/reservations**
+#Resource\_Reservation API
+- Insert Resource\_Reservation  
+**curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"resource\_reservation":{"resource\_id":1,"reservation\_id": 1}}' localhost:3000/resource\_reservations**
+- Get list of all Resource\_Reservations  
+**curl -v -X GET http://localhost:3000/reservations/index.json**
