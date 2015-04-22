@@ -1,0 +1,45 @@
+# PostgreSQL.(replaced MySQL) Versions 8.2 and up are supported.
+# MySQL.  Versions 5.0+ are recommended.
+# 
+# Install the pg driver:
+#   gem install pg
+# On OS X with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On OS X with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  host: <%= ENV["DBHOST"] %>
+  username: <%= ENV[""] %>
+  password: <%= ENV[""] %>
+
+development:
+  secret_key_base: d61ca155ef2dfd9e4da54ab021171289ebde13906cd1d5c74cf9659cdbb2e3c26e5cbde63f4fa8d776de67a8e97a82ea773cbab061b38097e48522854d85f1e7
+  <<: *default
+  database: <%= ENV[""] %>
+
+test:
+  <<: *default
+  secret_key_base: 8e095e3faed5dfaf922e532209aa4ad1c5396145b578e0b35ca044018d5deec1e03c4e784d37bfb311ca1f7bf46362cf4944b50d462528ef7b56178af4bbbe87
+  database: <%= ENV[""] %>
+
+production:
+  <<: *default
+  host: localhost
+  database: <%= ENV["DBNAMEPROD"] %>
+#production: *default
+
+
+#
+#   production:
+#

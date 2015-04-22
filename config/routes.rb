@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :reservations
+
   resources :providers do
     collection do
       get 'index'
