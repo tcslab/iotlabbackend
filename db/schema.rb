@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409115838) do
+ActiveRecord::Schema.define(version: 20150422131718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,11 +72,11 @@ ActiveRecord::Schema.define(version: 20150409115838) do
     t.string   "name",        limit: 30
     t.boolean  "phone_flag"
     t.string   "urn",         limit: 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.decimal  "latitude",               precision: 10, scale: 6
     t.decimal  "longitude",              precision: 10, scale: 6
     t.integer  "provider_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "nodes", ["provider_id"], name: "index_nodes_on_provider_id", using: :btree
@@ -95,6 +95,17 @@ ActiveRecord::Schema.define(version: 20150409115838) do
 
   add_index "providers", ["user_id"], name: "index_providers_on_user_id", using: :btree
 
+  create_table "reservations", force: true do |t|
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.integer  "user_id"
+    t.string   "reservation_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
+
   create_table "resource_types", force: true do |t|
     t.string   "name"
     t.string   "restype"
@@ -110,12 +121,12 @@ ActiveRecord::Schema.define(version: 20150409115838) do
 
   create_table "resources", force: true do |t|
     t.integer  "ipso_index"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name",             limit: 40
     t.integer  "resource_type_id"
     t.integer  "function_set_id"
     t.integer  "node_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "resources", ["function_set_id"], name: "index_resources_on_function_set_id", using: :btree
@@ -142,7 +153,7 @@ ActiveRecord::Schema.define(version: 20150409115838) do
     t.string   "phone_number",           limit: 50
     t.boolean  "phone_number_confirmed",            default: false,                 null: false
     t.boolean  "two_factor_confirmed",              default: false,                 null: false
-    t.datetime "lockout_end_date_utc",              default: '2015-04-03 09:10:43', null: false
+    t.datetime "lockout_end_date_utc",              default: '2015-04-18 09:29:12', null: false
     t.integer  "access_failed_count"
     t.datetime "created_at"
     t.datetime "updated_at"
