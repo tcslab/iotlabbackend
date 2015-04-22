@@ -2,6 +2,8 @@ class Resource < ActiveRecord::Base
   belongs_to :function_sets
   belongs_to :nodes
   belongs_to :resource_types
+  has_many :resource_reservations
+  has_many :reservations, :through => :resource_reservations
   validates :name, :presence => true
   validates :resource_type_id, :presence => true
   validates :function_set_id, :presence => true
