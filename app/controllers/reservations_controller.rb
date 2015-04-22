@@ -1,10 +1,15 @@
 class ReservationsController < ApplicationController
+  respond_to :json
+  protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
 
   # GET /reservations
   # GET /reservations.json
   def index
     @reservations = Reservation.all
+    respond_with(@reservations) do |format|
+      format.json { render :json => @reservations.as_json }
+    end
   end
 
   # GET /reservations/1

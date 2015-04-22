@@ -37,9 +37,9 @@ semester of the year.","start\_datetime":"23-02-2015",
     129.194.70.52:8000/nodes**
 - Set up API for resources  
 [Get list of resources by type](http://129.194.70.52:8000/resources/get_resources_by_type.json?provider\_id=49)  
-- Get List of all nodes
+- Get List of all nodes  
     **curl -v -X GET http://129.194.70.52:8000/nodes/index.json** 
-- Create a node:
+- Create a node:  
       **curl -v -H "Accept: application/json" -H "Content-type:
       application/json" -X POST -d ' {"resource":{"ipso\_index": 0,
       "function\_set\_id": 9, "node\_id": 1, "resource\_type\_id": 49,
@@ -60,3 +60,13 @@ semester of the year.","start\_datetime":"23-02-2015",
   "false"}}' 129.194.70.52:8000/users**
   - Get details of a user for a given ID
     **curl -v -X GET http://129.194.70.52:8000/users/1.json**
+#Reservation API
+- Get List of all nodes  
+    **curl -v -X GET http://129.194.70.52:8000/reservations/index.json**  
+- Create reservation  
+**curl -v -H "Accept: application/json" -H "Content-type:
+application/json" -X POST -d '
+{"reservation":{"start_datetime":"23-02-2015 14:30:00",
+"end_datetime":"23-02-2015
+14:50:00","reservation_key":"uMysLOdoTwSF8vllOaBtJqyo8OSm8Mcd2A_pk65qjqbrMwx6St80AA","user_id":
+1}}' http://129.194.70.52:8000/reservations**

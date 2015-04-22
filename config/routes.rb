@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :reservations
+  resources :reservations do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
 
   resources :providers do
     collection do
