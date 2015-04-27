@@ -15,14 +15,14 @@ class NodesController < ApplicationController
   # GET # /nodes/get_nodes_by_location.json?latitude=46.176388&longitude=6.139959
   def get_nodes_by_location
     @nodes = Node.all
-    lat_input = params[:myLocationLat]
-    lon_input = params[:myLocationLon]
+    lat_input = BigDecimal.new(params[:myLocationLat])
+    lon_input = BigDecimal.new(params[:myLocationLon])
     distance = 100
 
     distance = params[:distance] if(params.has_key?(:distance))
     @close_nodes = Array.new
     @nodes.each do |n|
-      @close_nodes << n if Harvesine.haversine_distance( lat_input, lon_input, n.latitude, n.longitude ) < distance
+      @close_nodes << n if Harvesine.haversine_distance( lat_input, lon_input, n.latitude, n.longitude ) < distance.to_f
     end
 
     respond_with(@close_nodes) do |format|

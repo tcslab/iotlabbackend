@@ -35,9 +35,10 @@ semester of the year.","start\_datetime":"23-02-2015",
 ## Get List of all nodes by location(latitude,longitude)  
 
 ### Arguments
-    - myLocationLat
-    - myLocationLon
-    - Example: [Node with latitude=46.176388 and longitude=6.139959](http://129.194.70.52:8000/nodes/get_nodes_by_location.json?location_latitude=46.176388&location_longitude=6.139959)  
+  - myLocationLat
+  - myLocationLon
+  - distance
+  - Example: [Node with latitude=46.176388 and longitude=6.139959](http://129.194.70.52:8000/nodes/get_nodes_by_location.json?myLocationLat=46.176388\&myLocationLon=6.139959\&distance=50)  
 
 ##Create a node:
     **curl -v -h "accept: application/json" -h "content-type:  
