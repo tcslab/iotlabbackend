@@ -35,8 +35,8 @@ semester of the year.","start\_datetime":"23-02-2015",
 ## Get List of all nodes by location(latitude,longitude)  
 
 ### Arguments
-    - location_latitude
-    - location_longitude
+    - myLocationLat
+    - myLocationLon
     - Example: [Node with latitude=46.176388 and longitude=6.139959](http://129.194.70.52:8000/nodes/get_nodes_by_location.json?location_latitude=46.176388&location_longitude=6.139959)  
 
 ##Create a node:
