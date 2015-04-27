@@ -14,7 +14,7 @@ class NodesController < ApplicationController
 
   # GET # /nodes/get_nodes_by_location.json?latitude=46.176388&longitude=6.139959
   def get_nodes_by_location
-    @nodes = Node.get_resources_by_location(params[:latitude],params[:longitude])
+    @nodes = Node.get_resources_by_location(params[:location_latitude],params[:location_longitude])
     respond_with(@nodes) do |format|
       format.json { render :json => @nodes.as_json }
     end

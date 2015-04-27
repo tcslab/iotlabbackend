@@ -23,13 +23,23 @@ semester of the year.","start\_datetime":"23-02-2015",
 129.194.70.52:8000/experiments**
 - Get list of Experiments
 **http://129.194.70.52:8000/experiments/index.json**
-#API for nodes
-- Get List of all nodes  
-      **curl -v -X GET http://129.194.70.52:8000/nodes/index.json**  
-[List of nodes by provider](http://129.194.70.52:8000/nodes/nodes\_by\_provider.json?provider_id=2)  
-- Get List of all nodes by location(latitude,longitude)  
-[Node with latitude=46.176388 and longitude=6.139959](http://129.194.70.52:8000/nodes/get_nodes_by_location.json?latitude=46.176388&longitude=6.139959)  
-- Create a node:
+# API for nodes
+
+## Get List of all nodes
+
+  **curl -v -X GET http://129.194.70.52:8000/nodes/index.json**  
+
+## Get List of all nodes by provider
+  [129.194.70.52:8000/nodes/nodes\_by\_provider.json?provider_id=2](129.194.70.52:8000/nodes/nodes\_by\_provider.json?provider_id=2)  
+
+## Get List of all nodes by location(latitude,longitude)  
+
+### Arguments
+    - location_latitude
+    - location_longitude
+    - Example: [Node with latitude=46.176388 and longitude=6.139959](http://129.194.70.52:8000/nodes/get_nodes_by_location.json?location_latitude=46.176388&location_longitude=6.139959)  
+
+##Create a node:
     **curl -v -h "accept: application/json" -h "content-type:  
     application/json" -x post -d ' {"node":{"name":"telosb  
     mote","phone_flag":"false","urn":"unige.a",  
@@ -44,8 +54,8 @@ semester of the year.","start\_datetime":"23-02-2015",
       application/json" -X POST -d ' {"resource":{"ipso\_index": 0,
       "function\_set\_id": 9, "node\_id": 1, "resource\_type\_id": 49,
       "name":"test resource"}}' http://129.194.70.52:8000/resources**
-- Set up USER API
-  - List of all users:
+#USER API
+##List of all users:
   **http://129.194.70.52:8000/users/index.json**
   - Create a user through the following command:
   **curl -v -H "Accept: application/json" -H "Content-type:
@@ -61,9 +71,9 @@ semester of the year.","start\_datetime":"23-02-2015",
   - Get details of a user for a given ID
     **curl -v -X GET http://129.194.70.52:8000/users/1.json**
 #Reservation API
-- Get List of all nodes  
+##List of all reservations  
     **curl -v -X GET http://129.194.70.52:8000/reservations/index.json**  
-- Create reservation  
+##Create reservation  
 **curl -v -H "Accept: application/json" -H "Content-type:
 application/json" -X POST -d '
 {"reservation":{"start_datetime":"23-02-2015 14:30:00",
