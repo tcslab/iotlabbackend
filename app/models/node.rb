@@ -14,4 +14,5 @@ class Node < ActiveRecord::Base
   def self.get_nodes_by_provider(provider_id)
     Node.where(provider_id: provider_id)
   end
+
 end

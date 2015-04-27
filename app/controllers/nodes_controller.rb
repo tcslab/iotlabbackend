@@ -6,6 +6,14 @@ class NodesController < ApplicationController
   # GET /nodes
   # GET /nodes.json
   def index
+
+    lon1 = -104.88544
+    lat1 = 39.06546
+   
+    lon2 = -104.80
+    lat2 = lat1
+   
+    Harvesine.haversine_distance( lat1, lon1, lat2, lon2 )
     @nodes = Node.all
     respond_with(@nodes) do |format|
       format.json { render :json => @nodes.as_json }
@@ -14,7 +22,7 @@ class NodesController < ApplicationController
 
   # GET # /nodes/get_nodes_by_location.json?latitude=46.176388&longitude=6.139959
   def get_nodes_by_location
-    @nodes = Node.get_resources_by_location(params[:location_latitude],params[:location_longitude])
+    @nodes = Node.get_resources_by_location(params[:myLocationLat],params[:myLocationLon])
     respond_with(@nodes) do |format|
       format.json { render :json => @nodes.as_json }
     end
