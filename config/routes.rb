@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :reward_categories do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
+
   resources :experiment_actions
 
   resources :resource_reservations do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427153708) do
+ActiveRecord::Schema.define(version: 20150429134854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,12 @@ ActiveRecord::Schema.define(version: 20150427153708) do
   add_index "resources", ["name"], name: "index_resources_on_name", unique: true, using: :btree
   add_index "resources", ["node_id"], name: "index_resources_on_node_id", using: :btree
   add_index "resources", ["resource_type_id"], name: "index_resources_on_resource_type_id", using: :btree
+
+  create_table "reward_categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name",                   limit: 20
