@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :experiment_actions
+
   resources :resource_reservations do
     collection do
       get 'index'
