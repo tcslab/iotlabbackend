@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :experiment_proposal_categories
+
   resources :reward_categories do
     collection do
       get 'index'
