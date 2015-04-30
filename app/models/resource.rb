@@ -12,4 +12,12 @@ class Resource < ActiveRecord::Base
   def self.resources_by_type(resource_type_id)
     Resource.where(resource_type_id: resource_type_id)
   end
+
+  def self.resources_by_path(path)
+    Resource.where(path: path)
+  end
+
+  def self.resources_by_name(name)
+    Resource.where(name: name)
+  end
 end

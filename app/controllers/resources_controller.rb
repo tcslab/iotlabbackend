@@ -20,6 +20,24 @@ class ResourcesController < ApplicationController
     end
   end
 
+  # GET /resources/resources_by_name.json
+  def resources_by_name
+    @resources = Resource.resources_by_name(params[:name])
+    respond_with(@resources) do |format|
+      format.json { render :json => @resources.as_json }
+    end
+  end
+
+
+  # GET /resources/resources_by_name.json
+  def resources_by_path
+    @resources = Resource.resources_by_path(params[:path])
+    respond_with(@resources) do |format|
+      format.json { render :json => @resources.as_json }
+    end
+  end
+
+
   # GET /resources/1.json
   def show
   end
