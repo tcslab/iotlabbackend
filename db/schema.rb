@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430071302) do
+ActiveRecord::Schema.define(version: 20150430122036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,6 +156,7 @@ ActiveRecord::Schema.define(version: 20150430071302) do
     t.integer  "resource_type_id"
     t.integer  "function_set_id"
     t.integer  "node_id"
+    t.string   "path"
   end
 
   add_index "resources", ["function_set_id"], name: "index_resources_on_function_set_id", using: :btree
