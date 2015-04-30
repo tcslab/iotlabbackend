@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :experiment_proposals
+  resources :experiment_proposals do
+    collection do
+      get 'index'
+      get 'show'
+    end
+  end
+
 
   resources :experiment_proposal_categories
 
