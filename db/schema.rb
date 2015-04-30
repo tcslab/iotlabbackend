@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429135718) do
+ActiveRecord::Schema.define(version: 20150430071302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,19 @@ ActiveRecord::Schema.define(version: 20150429135718) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "experiment_proposals", force: true do |t|
+    t.integer  "experiment_proposal_category_id"
+    t.integer  "reward_category_id"
+    t.integer  "user_id"
+    t.text     "proposal_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "experiment_proposals", ["experiment_proposal_category_id"], name: "index_experiment_proposals_on_experiment_proposal_category_id", using: :btree
+  add_index "experiment_proposals", ["reward_category_id"], name: "index_experiment_proposals_on_reward_category_id", using: :btree
+  add_index "experiment_proposals", ["user_id"], name: "index_experiment_proposals_on_user_id", using: :btree
 
   create_table "experiments", force: true do |t|
     t.string   "title",         limit: 80
